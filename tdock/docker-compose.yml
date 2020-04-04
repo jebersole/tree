@@ -1,0 +1,41 @@
+nginx:
+  build: nginx
+  volumes:
+    - ../:/tree
+  command: nginx -g "daemon off;"
+  links:
+    - php
+  ports:
+    - "80:80"
+      
+php:
+  build: .
+  volumes:
+    - ../:/tree
+    - ./xdebug.ini:/etc/php/7.0/fpm/conf.d/20-xdebug.ini
+  working_dir: /tree
+  command: php-fpm7.0
+  links:
+    - mysql
+  ports:
+    - "7000:7000"
+  environment:
+    APP_ENV: local
+    APP_DEBUG: 'true'
+    APP_LOCALE: en
+    APP_FALLBACK_LOCALE: en
+    DB_CONNECTION: mysql
+    DB_HOST: mysql
+    DB_DATABASE: tree
+    DB_USERNAME: root
+    DB_PASSWORD: secret
+    
+mysql:
+  image: mysql:5.7
+  ports:
+    - "3306:3306"
+  environment:
+    MYSQL_ROOT_PASSWORD: secret
+    MYSQL_DATABASE: tree
+    MYSQL_USER: root
+    MYSQL_PASSWORD: secret

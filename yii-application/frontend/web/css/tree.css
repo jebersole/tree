@@ -1,0 +1,82 @@
+.body-content {
+    background: url('/assets/tree.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 700px;
+    width: 900px;
+}
+
+#tree-grid {
+    display: inline-grid;
+    margin-left: 300px;
+    margin-top: 100px;
+    width: 300px;
+    grid-template-columns: auto auto auto;
+}
+
+#tree-grid .popover {
+    margin-top: 0px;
+    margin-right: 10px;
+    margin-left: -25px;
+}
+
+#ground-grid {
+    display: inline-grid;
+    width: 700px;
+    grid-template-columns: repeat(auto-fill, 70px);
+    margin-left: 140px;
+}
+
+#ground-grid .popover {
+    margin-left: -10px;
+}
+
+.apple {
+    width: 50px;
+    height: 50px;
+}
+
+.red {
+    filter: hue-rotate(280deg);
+    -webkit-filter: hue-rotate(280deg); 
+}
+
+.yellow {
+    filter: hue-rotate(340deg);
+    -webkit-filter: hue-rotate(340deg); 
+}
+
+.blue {
+    filter: hue-rotate(160deg);
+    -webkit-filter: hue-rotate(160deg); 
+}
+
+.alert {
+    margin-bottom: 35px;
+}
+
+.popover-content {
+    width: 245px;
+    min-height: 40px;
+    position: relative;
+}
+
+.popover-content input {
+    width: 67px;
+    position: absolute;
+    left: 82px;
+    bottom: 2px;
+}
+
+.fall {
+    margin-right: 10px;
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
+}
+
+.eat {
+    position: absolute;
+    left: 152px;
+    bottom: 2px;
+}
